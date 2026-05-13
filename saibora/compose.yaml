@@ -90,7 +90,7 @@ services:
     rustfs:
         image: 'rustfs/rustfs:latest'
         ports:
-            - '${FORWARD_RUSTFS_PORT:-9000}:9000'
+            - '${FORWARD_RUSTFS_PORT:-9002}:9000'
             - '${FORWARD_RUSTFS_CONSOLE_PORT:-9001}:9001'
         environment:
             RUSTFS_VOLUMES: /data
