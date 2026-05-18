@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/saibora/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
       <sourceFolder url="file://$MODULE_DIR$/saibora/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
       <sourceFolder url="file://$MODULE_DIR$/saibora/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/_laravel_idea" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/bacon/bacon-qr-code" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/brianium/paratest" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/brick/math" />

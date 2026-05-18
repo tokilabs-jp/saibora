@@ -165,6 +165,7 @@
       <path value="$PROJECT_DIR$/saibora/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/saibora/vendor/graham-campbell/result-type" />
       <path value="$PROJECT_DIR$/saibora/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/saibora/vendor/_laravel_idea" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.3">

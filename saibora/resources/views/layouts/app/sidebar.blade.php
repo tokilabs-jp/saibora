@@ -18,6 +18,15 @@
                 </flux:sidebar.group>
             </flux:sidebar.nav>
 
+
+            <flux:sidebar.nav>
+                <flux:sidebar.group :heading="__('Manage')" class="grid">
+                    <flux:sidebar.item icon="users" :href="route('admin.users.index')" :current="request()->routeIs('admin.users.index')" wire:navigate>
+                        {{ __('Users') }}
+                    </flux:sidebar.item>
+                </flux:sidebar.group>
+            </flux:sidebar.nav>
+
             <flux:spacer />
 
             <flux:sidebar.nav>
