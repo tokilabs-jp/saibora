@@ -1,7 +1,34 @@
-<x-layouts::app :title="__('Users')">
-
+<x-layouts::admin :title="__('Users')">
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
-        <h1 class="text-2xl inline">Users</h1>
+        <div class="flex items-center justify-between">
+            <h1 class="text-2xl inline">Users</h1>
+
+            <!-- Search and Filters -->
+            <form method="GET">
+                <div class="flex space-x-2">
+                    <!-- Search -->
+                    <flux:input
+                        name="filter[search]"
+                        :label="__('Search')"
+                        :value="request('filter.search')"
+                        icon="magnifying-glass"
+                        type="text"
+                        placeholder="Search ..."
+                    />
+
+                    <!-- Actions -->
+                    <div class="flex items-end space-x-2">
+                        <flux:button variant="primary" type="submit" class="w-full">
+                            Filter
+                        </flux:button>
+                        <flux:button href="{{ route('admin.users.index') }}">
+                            Clear
+                        </flux:button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
         @if($users->hasPages())
             {{ $users->links() }}
         @endif
@@ -58,4 +85,4 @@
             {{ $users->links() }}
         @endif
     </div>
-</x-layouts::app>
+</x-layouts::admin>
