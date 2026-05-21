@@ -16,10 +16,11 @@ class UserController extends Controller
             ->allowedFilters(
                 // Global search across id and email
                 AllowedFilter::callback('search', function ($query, $value) {
-                    $query->where(function ($query) use ($value) {
-                        $query->where('id', "{$value}")
-                            ->orWhere('email', "{$value}");
-                    });
+                    if (is_numeric($value)) {
+                        $query->where('id', $value);
+                    } else {
+                        $query->where('email', 'like', "%{$value}%");
+                    }
                 })
             )
             ->orderByDesc('id')
