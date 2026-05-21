@@ -108,6 +108,8 @@
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/sebastian/recursion-context" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/sebastian/type" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/spatie/laravel-package-tools" />
+      <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/spatie/laravel-query-builder" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/spomky-labs/cbor-php" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/spomky-labs/pki-framework" />
       <excludeFolder url="file://$MODULE_DIR$/saibora/vendor/staabm/side-effects-detector" />
