@@ -22,7 +22,7 @@
             </tr>
             </thead>
             <tbody class="divide-y divide-neutral-200 dark:divide-neutral-700">
-            @foreach($users as $user)
+            @forelse($users as $user)
                 <tr class="transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800/50">
                     <td class="whitespace-nowrap px-6 py-4 text-neutral-500 dark:text-neutral-400">
                         {{ $user->id }}
@@ -44,7 +44,13 @@
                         </a>
                     </td>
                 </tr>
-            @endforeach
+            @empty
+                <tr>
+                    <td colspan="4" class="px-6 py-4 text-center text-gray-500">
+                        No users found matching your criteria.
+                    </td>
+                </tr>
+            @endforelse
             </tbody>
         </table>
     </div>
