@@ -3,15 +3,19 @@
 use App\Models\User;
 use Livewire\Attributes\On;
 use Livewire\Component;
+use Livewire\WithPagination;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
 new class extends Component
 {
+    use WithPagination;
+
     #[On('user-created')]
     public function refreshUsers(): void
     {
-        //
+        // 2ページ目などで、User作成しても１ページに戻る
+        $this->resetPage();
     }
 
     public function with(): array
