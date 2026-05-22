@@ -26,6 +26,8 @@ new class extends Component {
 
         $this->reset(['name', 'email', 'password']);
 
+        $this->dispatch('user-created');
+
         Flux::modal('create-user')->close();
 
         Flux::toast(

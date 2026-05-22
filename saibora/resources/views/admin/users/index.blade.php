@@ -9,7 +9,7 @@
             </span>
         </div>
         @include('admin.users._search-form')
-        @include('admin.users._list')
+        @livewire('admin.users.list-users')
     </div>
     @livewire('admin.users.create-user')
 </x-layouts::admin>
