@@ -19,5 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Hirokazu Toki',
             'email' => 'dev@tokilabs.jp',
         ]);
+
+        $this->call(RoleSeeder::class);
     }
 }

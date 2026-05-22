@@ -41,10 +41,12 @@ new class extends Component
 
 @php
 /** @var \Illuminate\Support\Collection<\App\Models\User> $users */
+/** @var \App\Enums\UserRole $role */
 @endphp
 <flux:table :paginate="$users">
     <flux:table.columns class="bg-white dark:bg-zinc-800">
         <flux:table.column>ID</flux:table.column>
+        <flux:table.column>ROLE</flux:table.column>
         <flux:table.column>EMAIL</flux:table.column>
         <flux:table.column>NAME</flux:table.column>
         <flux:table.column></flux:table.column>
@@ -53,12 +55,23 @@ new class extends Component
         @forelse($users as $user)
             <flux:table.row :key="$user->id">
                 <flux:table.cell>{{ $user->id }}</flux:table.cell>
+                <flux:table.cell>
+                    @foreach($user->getRoleNames() as $role)
+                        @php
+                            $role_enum = \App\Enums\UserRole::tryFrom($role)
+                        @endphp
+                        @if($role_enum)
+                            <flux:badge color="{{ $role_enum->color() }}" size="sm" class="me-2">
+                                {{ $role_enum->label() }}
+                            </flux:badge>
+                        @endif
+                    @endforeach
+                </flux:table.cell>
                 <flux:table.cell variant="strong">{{ $user->email }}</flux:table.cell>
                 <flux:table.cell>{{ $user->name }}</flux:table.cell>
                 <flux:table.cell class="text-end">
                     <flux:dropdown>
                         <flux:button variant="ghost" size="sm" icon="ellipsis-horizontal" inset="top bottom" class="me-4"></flux:button>
-
                         <flux:menu>
                             <flux:menu.item icon="pencil-square">Edit</flux:menu.item>
                             <flux:menu.separator />
