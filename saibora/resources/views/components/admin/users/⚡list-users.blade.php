@@ -56,7 +56,15 @@ new class extends Component
                 <flux:table.cell variant="strong">{{ $user->email }}</flux:table.cell>
                 <flux:table.cell>{{ $user->name }}</flux:table.cell>
                 <flux:table.cell class="text-end">
-                    <flux:button variant="ghost" size="sm" icon="ellipsis-horizontal" inset="top bottom" class="me-4"></flux:button>
+                    <flux:dropdown>
+                        <flux:button variant="ghost" size="sm" icon="ellipsis-horizontal" inset="top bottom" class="me-4"></flux:button>
+
+                        <flux:menu>
+                            <flux:menu.item icon="pencil-square">Edit</flux:menu.item>
+                            <flux:menu.separator />
+                            <flux:menu.item variant="danger" icon="lock-closed">Lock</flux:menu.item>
+                        </flux:menu>
+                    </flux:dropdown>
                 </flux:table.cell>
             </flux:table.row>
         @empty
