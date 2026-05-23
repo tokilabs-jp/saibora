@@ -43,7 +43,7 @@ new class extends Component {
 };
 ?>
 
-<flux:modal name="create-user" flyout variant="floating" class="md:w-lg" :dismissible="false">
+<flux:modal name="create-user" flyout variant="floating" class="w-xl md:w-lg" :dismissible="false">
     <form wire:submit="save" class="space-y-6">
         <flux:heading size="lg">Create user</flux:heading>
 
