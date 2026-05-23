@@ -70,6 +70,7 @@ enum UserRole: string
                 UserPermission::VIEW_ASSIGNED_VOLUNTEER_ACTIVITIES->value,
             ],
             self::STAFF => [
+                UserPermission::VIEW_ANY_USER->value,
                 UserPermission::CREATE_CLIENT->value,
                 UserPermission::CREATE_VOLUNTEER->value,
                 UserPermission::CREATE_STAFF->value,

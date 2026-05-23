@@ -8,7 +8,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::view('dashboard', 'dashboard')->name('dashboard');
 
     Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-        Route::view('users', 'admin.users.index')->name('users.index');
+        Route::view('users', 'admin.users.index')->middleware(['permission:'.\App\Enums\UserPermission::VIEW_ANY_USER->value])->name('users.index');
         Route::get('role-permission-matrix', \App\Http\Controllers\Admin\RoleController::class)->name('roles.index');
     });
 });
