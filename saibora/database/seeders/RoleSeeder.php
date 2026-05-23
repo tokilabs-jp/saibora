@@ -22,10 +22,16 @@ class RoleSeeder extends Seeder
             ]);
         }
 
-        $user = User::whereEmail('dev@tokilabs.jp')->firstOrFail();
+        $system_admin = User::whereEmail('dev@tokilabs.jp')->firstOrFail();
+        $system_admin->assignRole(Role::findByName(UserRole::SYSTEM_ADMIN->value));
 
-        $all_roles = Role::all();
+        $staffs = User::where('email', 'like', 'dev+staff-%')->get();
+        $staffs->each(fn ($staff) => $staff->assignRole(Role::findByName(UserRole::STAFF->value)));
 
-        $user->assignRole($all_roles);
+        $clients = User::where('email', 'like', 'dev+client-%')->get();
+        $clients->each(fn ($client) => $client->assignRole(Role::findByName(UserRole::CLIENT->value)));
+
+        $volunteers = User::where('email', 'like', 'dev+volunteer-%')->get();
+        $volunteers->each(fn ($volunteer) => $volunteer->assignRole(Role::findByName(UserRole::VOLUNTEER->value)));
     }
 }
