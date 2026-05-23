@@ -13,4 +13,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     });
 });
 
+Route::middleware(['guest', 'local-only'])->group(function () {
+    Route::post('/local-login', \App\Http\Controllers\Development\LocalLoginController::class)->name('local-login');
+});
+
 require __DIR__.'/settings.php';

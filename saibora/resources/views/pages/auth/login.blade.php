@@ -55,5 +55,18 @@
                 <flux:link :href="route('register')" wire:navigate>{{ __('Sign up') }}</flux:link>
             </div>
         @endif
+
+        @env('local')
+            <flux:separator />
+            <div>
+                @foreach (\App\Enums\UserRole::cases() as $role)
+                    <form method="POST" action="{{ route('local-login') }}" style="display: inline;">
+                        @csrf
+                        <input type="hidden" name="role" value="{{ $role->value }}">
+                        <flux:button type="submit" size="sm" class="me-2">{{ $role->label() }}</flux:button>
+                    </form>
+                @endforeach
+            </div>
+        @endenv
     </div>
 </x-layouts::auth>
