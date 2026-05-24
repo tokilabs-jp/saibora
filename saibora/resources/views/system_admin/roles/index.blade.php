@@ -1,4 +1,4 @@
-<x-layouts::admin :title="__('Role-Permission Matrix')" xmlns:flux="http://www.w3.org/1999/html">
+<x-layouts::app :title="__('Role-Permission Matrix')" xmlns:flux="http://www.w3.org/1999/html">
     <div class="flex h-full w-full flex-1 flex-col gap-4 rounded-xl">
         <h1 class="text-2xl inline">{{ __('Role-Permission Matrix') }}</h1>
         @php
@@ -46,5 +46,5 @@
             </flux:table.rows>
         </flux:table>
     </div>
-    @livewire('admin.users.create-user')
-</x-layouts::admin>
+    @livewire('system_admin.users.create-user')
+</x-layouts::app>

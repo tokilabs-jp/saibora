@@ -16,7 +16,7 @@
             <flux:button variant="primary" type="submit" class="w-full">
                 Filter
             </flux:button>
-            <flux:button href="{{ route('admin.users.index') }}">
+            <flux:button href="{{ route('system_admin.users.index') }}">
                 Clear
             </flux:button>
         </div>
